@@ -19,7 +19,7 @@ const App = () => {
         Parent Component
        </h1>
        <div className="child">
-        {isLogin ? (<p>You are Logged In !</p>)
+        {isLogin ? (<p>'You are logged in!'</p>)
         : (
           <form>
             <div><label>Username :</label><input type="text" value={username} onChange={(e)=>{setUserName(e.target.value)}}/></div>
