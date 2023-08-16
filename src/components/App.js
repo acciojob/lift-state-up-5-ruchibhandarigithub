@@ -1,13 +1,35 @@
 
-import React from "react";
+import React , {useState} from "react";
+
 import './../styles/App.css';
 
 const App = () => {
+  const [username,setUserName]=useState('');
+  const [password,setPassword]=useState('');
+  const [isLogin,setIsLogin] =useState(false);
+  const handleLogin = () =>{
+    if(username!=='' && password!==''){
+      setIsLogin(true);
+    }
+    
+  }
   return (
     <div>
-        {/* Do not remove the main div */}
+       <h1>
+        Parent Component
+       </h1>
+       <div className="child">
+        {isLogin ? (<p>You are Logged In !</p>)
+        : (
+          <div>
+            <div><label>Username :</label><input type="text" value={username} onChange={(e)=>{setUserName(e.target.value)}}/></div>
+            <div><label>Password :</label><input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/></div>
+            <button onClick={handleLogin}>Login</button>
+          </div>
+        )}
+       </div>
     </div>
   )
 }
 
-export default App
+export default App;
