@@ -21,11 +21,11 @@ const App = () => {
        <div className="child">
         {isLogin ? (<p>You are Logged In !</p>)
         : (
-          <div>
+          <form>
             <div><label>Username :</label><input type="text" value={username} onChange={(e)=>{setUserName(e.target.value)}}/></div>
             <div><label>Password :</label><input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/></div>
             <button onClick={handleLogin}>Login</button>
-          </div>
+          </form>
         )}
        </div>
     </div>
